@@ -10,7 +10,7 @@ def scores(id, S):
     for i in range(np):
         for j in range(i):
             if id[i] == id[j]:
-                result[i, j] = 1
+                result[i, j] = True
     return result
 
 
@@ -37,5 +37,5 @@ if __name__ == "__main__":
     pyplot.imshow(S)
     pyplot.show()
 
-    pyplot.imshow(gen_imp)
+    pyplot.imshow(gen_imp )
     pyplot.show()
