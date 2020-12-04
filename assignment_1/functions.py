@@ -4,7 +4,7 @@ import numpy
 
 def classify_scores(S, id):
     [np, _] = S.shape
-    result = numpy.zeros(S.shape)
+    result = numpy.full(S.shape, False)
 
     for i in range(np):
         for j in range(i):

@@ -7,7 +7,7 @@ import numpy
 def scores(id, S):
     [np, nt] = S.shape
 
-    result = numpy.zeros(S.shape)
+    result = numpy.full(S.shape, False)
 
     for i in range(np):
         for j in range(i):
