@@ -3,6 +3,18 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual Environment
+pyvenv.cfg
+Include/
+Lib/
+Scripts/
+bin/
+false/
+include/
+lib/
+lib64/
+share/
+
 Graphs/
 *.mat
 *.png
