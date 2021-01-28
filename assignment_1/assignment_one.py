@@ -98,18 +98,66 @@ def show_graphs(gen, imp, thresholds, fmr_t, fnmr_t):
     pyplot.show()
 
     # Plot DET curve
+    pyplot.figure()
+
+    pyplot.subplot(221)
     pyplot.plot(fmr_t, fnmr_t)
     pyplot.plot([0, 1], [0, 1], 'b--')
     pyplot.xlabel('FMR(t)')
     pyplot.ylabel('FNMR(t)')
-    pyplot.title('Decision Error Trade-off (DET) curve')
+
+    # DET curve with logarithmic axes
+    pyplot.subplot(222)
+    pyplot.plot(fmr_t, fnmr_t)
+    pyplot.plot([0, 1], [0, 1], 'b--')
+    pyplot.xscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('FNMR(t)')
+
+    pyplot.subplot(223)
+    pyplot.plot(fmr_t, fnmr_t)
+    pyplot.plot([0, 1], [0, 1], 'b--')
+    pyplot.yscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('FNMR(t)')
+
+    pyplot.subplot(224)
+    pyplot.plot(fmr_t, fnmr_t)
+    pyplot.plot([0, 1], [0, 1], 'b--')
+    pyplot.xscale('log')
+    pyplot.yscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('FNMR(t)')
+
     pyplot.show()
 
     # Plot ROC curve
+    pyplot.figure()
+
+    pyplot.subplot(221)
     pyplot.plot(fmr_t, 1 - fnmr_t)
     pyplot.xlabel('FMR(t)')
     pyplot.ylabel('TMR(t)')
-    pyplot.title('Receiver Operating Characteristic (ROC) curve')
+
+    pyplot.subplot(222)
+    pyplot.plot(fmr_t, 1 - fnmr_t)
+    pyplot.xscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('TMR(t)')
+
+    pyplot.subplot(223)
+    pyplot.plot(fmr_t, 1 - fnmr_t)
+    pyplot.yscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('TMR(t)')
+
+    pyplot.subplot(224)
+    pyplot.plot(fmr_t, 1 - fnmr_t)
+    pyplot.xscale('log')
+    pyplot.yscale('log')
+    pyplot.xlabel('FMR(t)')
+    pyplot.ylabel('TMR(t)')
+
     pyplot.show()
 
 
