@@ -18,7 +18,7 @@ def scores(id, S):
 def fmr(imp, t):
     imp_over_t = 0
     for s in imp:
-        if s > t:
+        if s < t:
             imp_over_t += 1
     return imp_over_t / len(imp)
 
@@ -26,7 +26,7 @@ def fmr(imp, t):
 def fnmr(gen, t):
     gen_over_t = 0
     for s in gen:
-        if s > t:
+        if s < t:
             gen_over_t += 1
     return 1 - (gen_over_t / len(gen))
 
