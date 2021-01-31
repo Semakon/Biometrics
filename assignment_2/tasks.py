@@ -39,13 +39,28 @@ if __name__ == "__main__":
     components = pca.select_components(eigenvalues, eigenvectors, eigenvalues.shape[0])
 
     # Plot v(m)
-    # TODO: plot v(m)
+    v = np.empty(eigenvalues.shape)
+    v_m = np.sum(eigenvalues)
+    for m in range(eigenvalues.shape[0]):
+        v[m] = np.sum(eigenvalues[:m]) / v_m
+
+    plt.plot(v)
+    plt.show()
 
     # Display mean face and first 10 eigenfaces
     display_eigenface(eigenvalues, eigenvectors, mean, 10)
 
     # Compute score matrix
-    # TODO: step 4
+    m = 10
+    phi_m = pca.select_components(eigenvalues, eigenvectors, m)
+    phi_m.transpose()
+    a = np.empty(m)
+    for i in range(m):
+        a[i] = phi_m * (Xte[i] - mean)  # TODO: fix shape incompatibility
+    print(a)
 
-    # TODO: step 5
+    # Step 5
+    for i in range(10, 110, 10):
+        print('m={0}'.format(i))
+        display_eigenface(eigenvalues, eigenvectors, mean, i)
 
